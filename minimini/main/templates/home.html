@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Student dataset</h2>
+    <ul style="display: table; width: 20%;">
+        
+    <li style="display: table-row; font-weight: bold; background-color: #e1b5b5;">
+        <span style="display: table-cell; border: 1px solid #000; ">Name</span>
+        <span style="display: table-cell; border: 1px solid #000; ">Grade</span>
+        <span style="display: table-cell; border: 1px solid #000; ">department </span>
+    </li>
+
+    {% for i in student %}
+    <li style="display: table-row;">
+        <span style="display: table-cell; border: 1px solid #000; ">
+            {{ i.name }}
+        </span>
+        <span style="display: table-cell; border: 1px solid #000">
+            {{ i.grade }}
+        </span>
+        <span style="display: table-cell; border: 1px solid #000">
+            {{ i.department }}
+        </span>
+    </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
