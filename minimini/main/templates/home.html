@@ -6,28 +6,83 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Student dataset</h2>
-    <ul style="display: table; width: 20%;">
-        
-    <li style="display: table-row; font-weight: bold; background-color: #e1b5b5;">
-        <span style="display: table-cell; border: 1px solid #000; ">Name</span>
-        <span style="display: table-cell; border: 1px solid #000; ">Grade</span>
-        <span style="display: table-cell; border: 1px solid #000; ">department </span>
-    </li>
+    <h2 style="text-align:center;">Student Dataset</h2>
 
-    {% for i in student %}
-    <li style="display: table-row;">
-        <span style="display: table-cell; border: 1px solid #000; ">
-            {{ i.name }}
-        </span>
-        <span style="display: table-cell; border: 1px solid #000">
-            {{ i.grade }}
-        </span>
-        <span style="display: table-cell; border: 1px solid #000">
-            {{ i.department }}
-        </span>
-    </li>
-    {% endfor %}
-    </ul>
+    <div class="table-container">
+        <ul class="student-table">
+            
+            <li class="table-header">
+                <span>Name</span>
+                <span>Grade</span>
+                <span>Department</span>
+            </li>
+
+            {% for i in student %}
+            <li class="table-row">
+                <span>{{ i.name }}</span>
+                <span>{{ i.grade }}</span>
+                <span>{{ i.department }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Center container */
+.table-container {
+    width: 50%;
+    margin: 50px auto; /* centers horizontally */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on whole box */
+.table-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.student-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-table li {
+    display: table-row;
+}
+
+.student-table span {
+    display: table-cell;
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Header style */
+.table-header {
+    font-weight: bold;
+    background-color: #e1b5b5;
+}
+
+/* Row hover effect */
+.table-row {
+    transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+    background-color: #f2f2f2;
+}
+</style>
+
 </body>
+
 </html>
